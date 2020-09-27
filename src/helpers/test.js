@@ -7,3 +7,7 @@ export function hexToRGBString(hex) {
       )})`
     : null;
 }
+
+export const findByTestAttr = (wrapper, val, elem = '') => {
+  return wrapper.find(`${elem}[data-testid='${val}']`);
+};

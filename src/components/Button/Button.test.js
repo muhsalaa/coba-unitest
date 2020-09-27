@@ -3,6 +3,7 @@ import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import { Button } from './index';
+import { findByTestAttr } from '../../helpers/test';
 
 describe('Button component', () => {
   describe('Component Renders', () => {
@@ -42,9 +43,17 @@ describe('Button component', () => {
 
   describe('Component style', () => {
     it('should render blue button by default', () => {
-      const wrapper = mount(<Button />);
+      const wrapper = shallow(<Button />);
+      const button = findByTestAttr(wrapper, 'qa-button');
 
-      expect(wrapper.props().className).toContain('bg-blue-600');
+      expect(button.props().className).toContain('bg-blue-600');
+    });
+
+    it('should render button with color props provided', () => {
+      const wrapper = shallow(<Button color="red" />);
+      const button = findByTestAttr(wrapper, 'qa-button');
+
+      expect(button.props().className).toContain('bg-red-600');
     });
   });
 });

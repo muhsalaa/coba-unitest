@@ -33,14 +33,14 @@ describe('Alert component', () => {
 
   describe('Component style', () => {
     it('Should have green color by default', () => {
-      const wrapper = mount(<Alert />);
+      const wrapper = shallow(<Alert />);
       const alert = wrapper.find('div[data-testid="qa-alert"]');
 
       expect(alert.props().className).toContain('bg-green-200');
     });
 
     it('Should have red color if props provided', () => {
-      const wrapper = mount(<Alert color="red" />);
+      const wrapper = shallow(<Alert color="red" />);
       const alert = wrapper.find('div[data-testid="qa-alert"]');
 
       expect(alert.props().className).toContain('bg-red-200');
