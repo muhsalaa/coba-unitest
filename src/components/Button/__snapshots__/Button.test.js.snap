@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button component Component Renders Renders correctly and match snapshot 1`] = `
+<Button
+  className=""
+  color="blue"
+  disabled={false}
+  icon={null}
+  onClick={[Function]}
+>
+  <button
+    className="text-base sm:text-lg font-fira font-medium py-1 px-2 md:py-2 md:px-4 rounded-md focus:outline-none flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white"
+    data-testid="qa-button"
+    disabled={false}
+    onClick={[Function]}
+  />
+</Button>
+`;

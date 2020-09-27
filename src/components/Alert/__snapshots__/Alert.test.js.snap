@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert component Component Renders Renders correctly and match snapshot 1`] = `
+<Alert
+  color="green"
+  icon={null}
+>
+  <div
+    className="my-2 p-3 text-lg rounded-md flex items-center justify-center bg-green-200 text-green-700"
+    data-testid="qa-alert"
+  />
+</Alert>
+`;
