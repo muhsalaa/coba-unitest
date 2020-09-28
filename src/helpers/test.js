@@ -11,7 +11,3 @@ export function hexToRGBString(hex) {
 export const findByTestAttr = (wrapper, val, elem = '') => {
   return wrapper.find(`${elem}[data-testid='${val}']`);
 };
-
-export function findByTestAttr2(wrapper, val, elem = '') {
-  return wrapper.find(`${elem}[data-testid='${val}']`);
-}
