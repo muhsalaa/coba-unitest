@@ -20,8 +20,8 @@ describe('App page', () => {
     });
   });
 
-  describe('Page functionality', () => {
-    it('Email input field change values', () => {
+  describe('Email input', () => {
+    it('Input field changed its values', () => {
       // explain berbagai cara tuhan menghadirkan cinta
       // const emailInput = findByTestAttr(wrapper, 'qa-input-field').at(0);
       const emailInput = () =>
@@ -41,7 +41,25 @@ describe('App page', () => {
       expect(emailInput().props().value).toBe('Hola como estas');
     });
 
-    it('Password input field change values', async () => {
+    it('shows error if email format false', () => {
+      const form = wrapper.find('form');
+      const emailInput = () =>
+        findByTestAttr(wrapper, 'qa-input-field').first();
+
+      emailInput().simulate('change', {
+        target: { name: 'email', value: 'Hola como estas' },
+      });
+      form.simulate('submit');
+      wrapper.update();
+
+      expect(findByTestAttr(wrapper, 'qa-input-error').first().text()).toBe(
+        'Format email salahh'
+      );
+    });
+  });
+
+  describe('Password input', () => {
+    it('input field changed its values', async () => {
       const passwordInput = () =>
         findByTestAttr(wrapper, 'qa-input-field').at(1);
 
@@ -59,6 +77,22 @@ describe('App page', () => {
       wrapper.update();
 
       expect(passwordInput().props().value).toBe('monoyoyoy');
+    });
+
+    it('shows error if password length less than 8', () => {
+      const form = wrapper.find('form');
+      const passwordInput = () =>
+        findByTestAttr(wrapper, 'qa-input-field').last();
+
+      passwordInput().simulate('change', {
+        target: { name: 'password', value: 'Hol' },
+      });
+      form.simulate('submit');
+      wrapper.update();
+
+      expect(findByTestAttr(wrapper, 'qa-input-error').last().text()).toBe(
+        'Minimal password 8 karakter'
+      );
     });
   });
 });

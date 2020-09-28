@@ -68,7 +68,7 @@ describe('Field component', () => {
     });
 
     it('should render red border if error', () => {
-      const wrapper = mount(<Field error={{ message: 'salah' }} />);
+      const wrapper = mount(<Field error="salah" />);
       const field = findByTestAttr(wrapper, 'qa-input-field');
 
       expect(field.props().className).toContain('border-red-700');
