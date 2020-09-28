@@ -16,7 +16,7 @@ describe('Field component', () => {
     });
 
     it('Renders error message if provided', () => {
-      const wrapper = shallow(<Field error={{ message: 'salah bos' }} />);
+      const wrapper = shallow(<Field error="salah bos" />);
       const error = findByTestAttr(wrapper, 'qa-input-error');
 
       expect(error.text()).toBe('salah bos');

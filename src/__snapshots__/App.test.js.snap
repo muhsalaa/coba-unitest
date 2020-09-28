@@ -1,3 +1,98 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Field component Component Renders Renders correctly and match snapshot 1`] = `undefined`;
+exports[`App page Component Renders Renders correctly and match snapshot 1`] = `
+<App>
+  <div
+    className="p-24 text-center"
+  >
+    <h1
+      className="text-4xl mb-5 font-bold font-serif"
+    >
+      Monggo login rumiyin
+    </h1>
+    <form
+      onSubmit={[Function]}
+    >
+      <Field
+        error=""
+        label="Email"
+        name="email"
+        onChange={[Function]}
+        placeholder="masukkan email"
+        type="text"
+        value=""
+      >
+        <div
+          className="mb-4"
+          data-testid="qa-input-wrapper"
+        >
+          <div
+            className="text-xl text-left"
+            data-testid="qa-input-label"
+          >
+            Email
+          </div>
+          <input
+            className="h-12 border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-300"
+            data-testid="qa-input-field"
+            name="email"
+            onChange={[Function]}
+            placeholder="masukkan email"
+            type="text"
+            value=""
+          />
+        </div>
+      </Field>
+      <Field
+        error=""
+        label="Password"
+        name="password"
+        onChange={[Function]}
+        placeholder="masukkan password"
+        type="password"
+        value=""
+      >
+        <div
+          className="mb-4"
+          data-testid="qa-input-wrapper"
+        >
+          <div
+            className="text-xl text-left"
+            data-testid="qa-input-label"
+          >
+            Password
+          </div>
+          <input
+            className="h-12 border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-300"
+            data-testid="qa-input-field"
+            name="password"
+            onChange={[Function]}
+            placeholder="masukkan password"
+            type="password"
+            value=""
+          />
+        </div>
+      </Field>
+      <Button
+        block={true}
+        className=""
+        color="blue"
+        disabled={false}
+        icon={null}
+        onClick={[Function]}
+        type="submit"
+      >
+        <button
+          className="text-base sm:text-lg font-fira font-medium py-1 px-2 md:py-2 md:px-4 rounded-md focus:outline-none flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white w-full"
+          data-testid="qa-button"
+          disabled={false}
+          onClick={[Function]}
+          type="submit"
+        >
+          Soebmit
+        </button>
+      </Button>
+    </form>
+  </div>
+</App>
+`;

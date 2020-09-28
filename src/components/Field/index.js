@@ -23,9 +23,9 @@ export function Field({ error, label, readOnly, ...resProps }) {
         {...resProps}
       />
       {error && (
-        <span data-testid="qa-input-error" className="text-red-700">
-          {error.message}
-        </span>
+        <div data-testid="qa-input-error" className="text-red-700 text-left">
+          {error}
+        </div>
       )}
     </div>
   );

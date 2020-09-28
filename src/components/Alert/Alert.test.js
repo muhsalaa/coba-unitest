@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { FaExclamationTriangle } from 'react-icons/fa';
 
-import Alert from './index';
+import { Alert } from './index';
 
 describe('Alert component', () => {
   describe('Component Renders', () => {

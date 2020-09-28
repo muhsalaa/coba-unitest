@@ -6,6 +6,10 @@ import { Alert, Button, Field } from './components';
 
 function App() {
   const [credential, setCredential] = useState({ email: '', password: '' });
+  const [credentialError, setCredentialError] = useState({
+    email: '',
+    password: '',
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [token, setToken] = useState('');
   const [error, setError] = useState('');
@@ -15,8 +19,23 @@ function App() {
     setCredential((current) => ({ ...current, [name]: value }));
   }
 
+  function validate() {
+    const email = /\S+@\S+\.\S+/.test(credential.email)
+      ? ''
+      : 'Format email salahh';
+    const password =
+      credential.password.length < 8 ? 'Minimal password 8 karakter' : '';
+    setCredentialError((current) => ({ ...current, email, password }));
+    return email || password;
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
+
+    if (validate()) {
+      return false;
+    }
+
     setIsLoading(true);
     setError('');
 
@@ -53,6 +72,7 @@ function App() {
           onChange={handleChange}
           label="Email"
           value={credential.email}
+          error={credentialError.email}
         />
         <Field
           name="password"
@@ -61,6 +81,7 @@ function App() {
           onChange={handleChange}
           label="Password"
           value={credential.password}
+          error={credentialError.password}
         />
         <Button type="submit" disabled={isLoading} block>
           Soebmit
