@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 import userEvent from '@testing-library/user-event';
 import { render } from '@testing-library/react';
 
-import Field from './index';
+import { Field } from './index';
 import { findByTestAttr } from '../../helpers/test';
 
 describe('Field component', () => {

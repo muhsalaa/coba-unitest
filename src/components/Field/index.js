@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-function Field({ error, label, readOnly, ...resProps }) {
+export function Field({ error, label, readOnly, ...resProps }) {
   const inputClass = clsx(
     'h-12 border rounded w-full py-2 px-3 leading-tight focus:outline-none',
     !error && 'focus:border-blue-300',
@@ -35,5 +35,3 @@ Field.defaultProps = {
   type: 'text',
   label: false,
 };
-
-export default Field;
