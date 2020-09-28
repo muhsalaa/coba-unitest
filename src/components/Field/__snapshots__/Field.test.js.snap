@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field component Component Renders Renders correctly and match snapshot 1`] = `
+<Field
+  label={false}
+  type="text"
+>
+  <div
+    className="mb-4"
+    data-testid="qa-input-wrapper"
+  >
+    <input
+      className="h-12 border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:border-blue-300"
+      data-testid="qa-input-field"
+      type="text"
+    />
+  </div>
+</Field>
+`;
