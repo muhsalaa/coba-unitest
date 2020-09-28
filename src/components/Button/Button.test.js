@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import { FaExclamationTriangle } from 'react-icons/fa';
 
 import { Button } from './index';
 import { findByTestAttr } from '../../helpers/test';
@@ -17,6 +18,14 @@ describe('Button component', () => {
       const wrapper = shallow(<Button>Hola como estas</Button>);
 
       expect(wrapper.text()).toBe('Hola como estas');
+    });
+
+    it('Renders icon if provided', () => {
+      const wrapper = shallow(
+        <Button icon={FaExclamationTriangle}>Hola</Button>
+      );
+
+      expect(wrapper.text()).toContain('<FaExclamationTriangle />');
     });
   });
 
@@ -43,17 +52,31 @@ describe('Button component', () => {
 
   describe('Component style', () => {
     it('should render blue button by default', () => {
-      const wrapper = shallow(<Button />);
+      const wrapper = mount(<Button />);
       const button = findByTestAttr(wrapper, 'qa-button');
 
       expect(button.props().className).toContain('bg-blue-600');
     });
 
     it('should render button with color props provided', () => {
-      const wrapper = shallow(<Button color="red" />);
+      const wrapper = mount(<Button color="red" />);
       const button = findByTestAttr(wrapper, 'qa-button');
 
       expect(button.props().className).toContain('bg-red-600');
+    });
+
+    it('should render button with gray color when disabled', () => {
+      const wrapper = mount(<Button disabled />);
+      const button = findByTestAttr(wrapper, 'qa-button');
+
+      expect(button.props().className).toContain('bg-gray-500');
+    });
+
+    it('should have full width if block props provided', () => {
+      const wrapper = mount(<Button block />);
+      const button = findByTestAttr(wrapper, 'qa-button');
+
+      expect(button.props().className).toContain('w-full');
     });
   });
 });
