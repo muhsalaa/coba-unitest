@@ -10,10 +10,23 @@ export function Field({ error, label, readOnly, ...resProps }) {
   );
 
   return (
-    <div className="mb-4">
-      {label && <div className="text-xl text-left">{label}</div>}
-      <input className={inputClass} readOnly={readOnly} {...resProps} />
-      {error && <span className="text-red-700">{error.message}</span>}
+    <div data-testid="qa-input-wrapper" className="mb-4">
+      {label && (
+        <div data-testid="qa-input-label" className="text-xl text-left">
+          {label}
+        </div>
+      )}
+      <input
+        data-testid="qa-input-field"
+        className={inputClass}
+        readOnly={readOnly}
+        {...resProps}
+      />
+      {error && (
+        <span data-testid="qa-input-error" className="text-red-700">
+          {error.message}
+        </span>
+      )}
     </div>
   );
 }
