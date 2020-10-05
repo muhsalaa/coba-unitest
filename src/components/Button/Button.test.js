@@ -52,8 +52,8 @@ describe('Button component', () => {
 
   describe('Component style', () => {
     it('should render blue button by default', () => {
-      const wrapper = mount(<Button />);
-      const button = findByTestAttr(wrapper, 'qa-button');
+      const wrapper = (props) => mount(<Button {...props} />);
+      const button = findByTestAttr(wrapper({}), 'qa-button');
 
       expect(button.props().className).toContain('bg-blue-600');
     });

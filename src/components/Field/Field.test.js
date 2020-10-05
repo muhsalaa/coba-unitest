@@ -35,9 +35,9 @@ describe('Field component', () => {
       const wrapper = render(<Field />);
       const input = wrapper.getByTestId('qa-input-field');
 
-      await userEvent.type(input, 'hola como estas');
+      await userEvent.type(input, 'mi nombre is eja');
 
-      expect(input.value).toBe('hola como estas');
+      expect(input.value).toBe('mi nombre is eja');
     });
 
     it('should not response value typed if readOnly', async () => {
