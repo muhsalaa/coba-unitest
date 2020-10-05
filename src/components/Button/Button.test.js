@@ -35,8 +35,11 @@ describe('Button component', () => {
       const wrapper = mount(<Button onClick={() => spy('haha')} />);
 
       wrapper.simulate('click');
+      wrapper.simulate('click');
+      wrapper.simulate('click');
+      wrapper.simulate('click');
 
-      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledTimes(4);
       expect(spy).toHaveBeenCalledWith('haha');
     });
 
